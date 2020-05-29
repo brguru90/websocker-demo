@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-var expressWs = require('express-ws')(app);
+// var expressWs = require('express-ws')(app);
 
 var port = 8000
 
@@ -12,14 +12,14 @@ app.use(function (req, res, next) {
 
 
 app.use('/api/', require("./api/test"))
-app.use('/ws/', require("./ws/chat"))
+app.use('/api/', require("./ws/chat"))
 
 
 
 
 app.get('/', function (req, res, next) {
-    console.log('get route');
-    res.send("hi");
+    console.log('get route', "hiiiii");
+    res.end();
 });
 
 
