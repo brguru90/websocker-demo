@@ -16,12 +16,14 @@
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "lint": "eslint src/**/*.js src/**/*.jsx",
+        "lint": "eslint ./src/**/*.js ./src/**/*.jsx",
         "format": "prettier --write \"**/*.+(js|jsx|json|yml|yaml|css|md|vue)\""
     },
     "eslintConfig": {
         "extends": [
             "react-app",
+            "eslint:recommended",
+            "plugin:react/recommended",
             "plugin:prettier/recommended"
         ]
     },
@@ -60,5 +62,39 @@
         "arrowParens": "always",
         "semi": false,
         "tabWidth": 4
+    },
+    "settings": {
+        "react": {
+            "createClass": "createReactClass",
+            "pragma": "React",
+            "version": "detect",
+            "flowVersion": "0.53"
+        },
+        "propWrapperFunctions": [
+            "forbidExtraProps",
+            {
+                "property": "freeze",
+                "object": "Object"
+            },
+            {
+                "property": "myFavoriteWrapper"
+            }
+        ],
+        "linkComponents": [
+            "Hyperlink",
+            {
+                "name": "Link",
+                "linkAttribute": "to"
+            }
+        ]
+    },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error"
     }
 }
