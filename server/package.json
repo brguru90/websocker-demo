@@ -24,6 +24,7 @@
         "compression": "^1.7.4",
         "express": "^4.17.1",
         "express-ws": "^4.0.0",
+        "http-proxy": "^1.18.1",
         "restify": "^8.5.1"
     },
     "devDependencies": {
