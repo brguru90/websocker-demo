@@ -25,7 +25,6 @@
     },
     "author": "Guruprasad BR",
     "license": "ISC",
-    "homepage": "https://bitbucket.org/terralogic2019/meet#readme",
     "eslintConfig": {},
     "browserslist": {
         "production": [
