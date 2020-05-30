@@ -10,7 +10,8 @@
         "format": "prettier --write '**/*.+(js|json|yml|yaml|md)'",
         "test": "npm run lint && npm run format",
         "stopserver": "pm2 stop server && pm2 delete server;exit 0",
-        "runserver": "npm run stopserver && pm2 start server.js && pm2 restart server.js && pm2 status && pm2 monit --force "
+        "runserver": "npm run stopserver && pm2 start server.js && pm2 restart server.js && pm2 status",
+        "runserver2": "npm run stopserver && pm2 start server.js && pm2 restart server.js && pm2 status && pm2 monit --force "
     },
     "repository": {
         "type": "git",
