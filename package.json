@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "concurrently 'npm run test --prefix server/' 'npm run test2 --prefix test_app/'",
+    "npm_i": "concurrently 'npm i --prefix server/' 'npm i --prefix test_app/'",
     "start": "concurrently 'npm run start --prefix server/' 'npm run start --prefix test_app/'"
   },
   "repository": {
