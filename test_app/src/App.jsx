@@ -11,7 +11,7 @@ export default class App extends Component {
     connect = () => {
         const resp = document.querySelector("pre")
 
-        resp.innerHTML = ""
+        resp.innerHTML = "guru"
 
         const client = new WebSocket("ws://localhost:8000/ws/chat")
         client.onopen = function () {
