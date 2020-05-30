@@ -8,11 +8,6 @@ export default class App extends Component {
 
     client = null
 
-    componentDidMount() {
-        // try {
-        // } catch (err) {}
-    }
-
     connect = () => {
         const resp = document.querySelector("pre")
 

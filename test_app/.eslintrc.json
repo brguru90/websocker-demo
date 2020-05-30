@@ -1,13 +1,19 @@
 {
     "env": {
+        "jest": true,
         "browser": true,
-        "node": true,
+        "commonjs": true,
         "es6": true,
-        "jest": true
+        "node": true
     },
     "parser": "babel-eslint",
     // "extends": ["airbnb","prettier", "prettier/react","eslint:recommended", "plugin:react/recommended"],
     "extends": ["prettier/react", "eslint:recommended", "plugin:react/recommended"],
+    // "extends": "eslint:recommended",
+    // "extends": ["eslint:recommended", "plugin:react/recommended"],
+
+    "plugins": ["react", "prettier"],
+    // "plugins": ["react"],
 
     "globals": {
         "Atomics": "readonly",
@@ -20,7 +26,6 @@
         "ecmaVersion": 11,
         "sourceType": "module"
     },
-    "plugins": ["react", "prettier"],
     "settings": {
         "react": {
             "createClass": "createReactClass",
