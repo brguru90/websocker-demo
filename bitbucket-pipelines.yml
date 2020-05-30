@@ -14,4 +14,4 @@ pipelines:
           - npm install
           - npm run npm_i
           - npm test
-          - npm runserver
+          - npm run runserver
