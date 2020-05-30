@@ -15,10 +15,11 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test",
         "eject": "react-scripts eject",
         "lint": "eslint 'src/**/*.{js,jsx}' --fix;exit 0",
-        "format": "prettier --write 'src/**/*.+(js|jsx|json|yml|yaml|css|md|vue)'"
+        "format": "prettier --write 'src/**/*.+(js|jsx|json|yml|yaml|css|md|vue)'",
+        "test": "react-scripts test",
+        "test2": "npm run lint && npm run format"
     },
     "repository": {
         "type": "git",

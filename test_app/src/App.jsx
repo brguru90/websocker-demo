@@ -8,6 +8,7 @@ export default class App extends Component {
     client = null
 
     componentDidMount() {
+        console.log("hi")
         let timeout = setTimeout(() => {
             $(".App").addClass("loaded")
             clearTimeout(timeout)

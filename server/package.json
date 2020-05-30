@@ -4,10 +4,10 @@
     "description": "Online video conference handler server",
     "main": "server.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "start": "nodemon server.js",
         "lint": "eslint '**/*.js' --fix;exit 0",
-        "format": "prettier --write '**/*.+(js|json|yml|yaml|md)'"
+        "format": "prettier --write '**/*.+(js|json|yml|yaml|md)'",
+        "test": "npm run lint && npm run format"
     },
     "repository": {
         "type": "git",
