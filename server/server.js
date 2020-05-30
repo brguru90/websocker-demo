@@ -1,12 +1,12 @@
-const express = require('express');
-const app = express();
-var expressWs = require('express-ws')(app);
+const express = require('express')
+const app = express()
+require('express-ws')(app)
 
 var port = 8000
 
 app.use(function (req, res, next) {
-    console.log('middleware');
-    return next();
+	console.log('middleware')
+	return next()
 });
 
 
@@ -17,7 +17,7 @@ app.use('/ws/', require("./ws/chat"))
 
 
 
-app.get('/', function (req, res, next) {
+app.get('/', function (req, res) {
     console.log('get route');
     res.send("hi");
 });

@@ -4,6 +4,7 @@ const router = express();
 var expressWs = require('express-ws')(router);
 
 
+// eslint-disable-next-line no-unused-vars
 router.ws('/chat', function (ws, req) {
 
     console.log(ws.readyState)
@@ -15,7 +16,7 @@ router.ws('/chat', function (ws, req) {
                 ws.close()
             }
         } catch (error) {
-
+            console.log(error)
         }
         clearTimeout(timeout)
     }, 5000);
@@ -31,7 +32,7 @@ router.ws('/chat', function (ws, req) {
                     ws.close()
                 }
             } catch (error) {
-
+                console.log(error)
             }
             clearTimeout(timeout)
         }, 5000);
