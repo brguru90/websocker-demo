@@ -12,5 +12,5 @@
       "editor.acceptSuggestionOnEnter": "off"
     },
     "editor.formatOnSave": true,
-    "git.githubAuthentication": false
+    "git.terminalAuthentication": false
   }
