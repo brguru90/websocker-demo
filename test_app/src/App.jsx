@@ -1,10 +1,19 @@
 import React, {Component} from "react"
-import "./App.css"
+import "./App.scss"
+import * as $ from "jquery"
 
 export default class App extends Component {
     state = {}
 
     client = null
+
+    componentDidMount() {
+        console.log("hi")
+        let timeout = setTimeout(() => {
+            $(".App").addClass("loaded")
+            clearTimeout(timeout)
+        }, 1000)
+    }
 
     connect = () => {
         const resp = document.querySelector("pre")
