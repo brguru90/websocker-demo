@@ -8,7 +8,8 @@
     "npm_i": "concurrently 'npm i --prefix server/' 'npm i --prefix test_app/'",
     "build": "npm run build --prefix test_app/",
     "start": "concurrently 'npm run start --prefix server/' 'npm run start --prefix test_app/'",
-    "runserver": "npm run build && npm run runserver --prefix server/"
+    "runserver": "npm run build && npm run runserver --prefix server/",
+    "deploy": "npm i && npm run npm_i && npm run build && npm run runserver --prefix server/"
   },
   "repository": {
     "type": "git",
