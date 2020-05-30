@@ -8,15 +8,16 @@ export default class App extends Component {
 
     connect = () => {
         const resp = document.querySelector("pre")
-
         resp.innerHTML = "guru"
 
         const client = new WebSocket("ws://localhost:8000/ws/chat")
+
         client.onopen = function () {
             console.log("[open] Connection established")
             resp.innerHTML += "[open] Connection established\n"
             // client.send("My name is John");
         }
+
         client.onmessage = function (event) {
             console.log(`[message] Data received from server: ${event.data}`)
             resp.innerHTML += `${event.data}\n`
@@ -35,6 +36,7 @@ export default class App extends Component {
                 resp.innerHTML += "[close] Connection died\n"
             }
         }
+
         client.onerror = function (error) {
             console.log(error)
             alert(`[error] ${error.message}`)
