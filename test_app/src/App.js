@@ -1,96 +1,78 @@
-import React, { Component } from 'react'
-import './App.css';
+import React, {Component} from "react"
+import "./App.css"
 // var WebSocketClient = require('websocket').client;
 // const Webclient = require('ws')
 
-
 export default class App extends Component {
+    state = {}
 
+    client = null
 
+    componentDidMount() {}
 
-  state = {
+    connect = () => {
+        const resp = document.querySelector("pre")
 
-  }
+        resp.innerHTML = ""
 
-  client = null
+        const client = new WebSocket("ws://localhost:8000/ws/chat")
+        client.onopen = function () {
+            console.log("[open] Connection established")
+            resp.innerHTML += "[open] Connection established\n"
+            // client.send("My name is John");
+        }
+        client.onmessage = function (event) {
+            console.log(`[message] Data received from server: ${event.data}`)
+            resp.innerHTML += `${event.data}\n`
+        }
 
+        client.onclose = function (event) {
+            if (event.wasClean) {
+                console.log(
+                    `[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`
+                )
+                resp.innerHTML += `[close] Connection closed cleanly, code=${event.code} reason=${event.reason}\n`
+            } else {
+                // e.g. server process killed or network down
+                // event.code is usually 1006 in this case
+                console.log("[close] Connection died")
+                resp.innerHTML += "[close] Connection died\n"
+            }
+        }
+        client.onerror = function (error) {
+            console.log(error)
+            alert(`[error] ${error.message}`)
+            resp.innerHTML += `[error] ${error.message}\n`
+        }
 
-
-  componentDidMount() {
-  }
-
-
-  connect = () => {
-
-    let resp = document.querySelector("pre")
-
-    resp.innerHTML = ""
-
-    const client = new WebSocket('ws://localhost:8000/ws/chat');
-    client.onopen = function (e) {
-      console.log("[open] Connection established");
-      resp.innerHTML +="[open] Connection established\n"
-      // client.send("My name is John");
-    };
-    client.onmessage = function (event) {
-      console.log(`[message] Data received from server: ${event.data}`);
-      resp.innerHTML += event.data + "\n"
+        this.client = client
     }
 
-    client.onclose = function (event) {
-      if (event.wasClean) {
-        console.log(`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}`);
-        resp.innerHTML +=`[close] Connection closed cleanly, code=${event.code} reason=${event.reason}\n`
-      } else {
-        // e.g. server process killed or network down
-        // event.code is usually 1006 in this case
-        console.log('[close] Connection died');
-        resp.innerHTML +='[close] Connection died\n'
-      }
-    };
-    client.onerror = function(error) {
-      console.log(error)
-      alert(`[error] ${error.message}`);
-      resp.innerHTML +=`[error] ${error.message}\n`
-    };
+    disconnect = () => {
+        this.client.close()
+    }
 
+    send = () => {
+        const text = document.querySelector("textarea").value
+        this.client.send(text)
+    }
 
+    render() {
+        return (
+            <div className="App">
+                <br />
+                <br />
+                <button onClick={this.connect}>Connect</button>
+                <button onClick={this.disconnect}>Disconnect</button>
+                <br />
+                <br />
 
-    this.client=client
-
-  }
-
-
-  disconnect = () => {
-    this.client.close()
-  }
-
-
-  send = () => {
-
-    let text=document.querySelector("textarea").value
-    this.client.send(text);
-
-  }
-
-
-
-
-
-
-
-
-  render() {
-    return (
-      <div className="App">
-        <br /><br />
-        <button onClick={this.connect}>Connect</button>
-        <button onClick={this.disconnect}>Disconnect</button><br /><br />
-
-        <textarea></textarea><br /><br />
-        <button onClick={this.send}>Send</button>
-        <pre></pre>
-      </div>
-    )
-  }
+                <textarea />
+                <br />
+                <br />
+                <button onClick={this.send}>Send</button>
+                <pre />
+            </div>
+        )
+    }
 }
