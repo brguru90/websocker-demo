@@ -19,6 +19,13 @@
         "lint": "eslint 'src/**/*.{js,jsx}' --fix;exit 0",
         "format": "prettier --write 'src/**/*.+(js|jsx|json|yml|yaml|css|md|vue)'"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://terralogic2019@bitbucket.org/terralogic2019/meet.git"
+    },
+    "author": "Guruprasad BR",
+    "license": "ISC",
+    "homepage": "https://bitbucket.org/terralogic2019/meet#readme",
     "eslintConfig": {},
     "browserslist": {
         "production": [

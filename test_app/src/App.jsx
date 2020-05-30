@@ -1,7 +1,5 @@
 import React, {Component} from "react"
 import "./App.css"
-// var WebSocketClient = require('websocket').client;
-// const Webclient = require('ws')
 
 export default class App extends Component {
     state = {}

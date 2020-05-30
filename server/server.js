@@ -1,27 +1,23 @@
-const express = require('express')
+const express = require("express")
 const app = express()
-require('express-ws')(app)
+// const restify = require("restify");
+// const app = restify.createServer()
+require("express-ws")(app)
 
 var port = 8000
 
 app.use(function (req, res, next) {
-	console.log('middleware')
-	return next()
-});
+    console.log("middleware")
+    return next()
+})
 
+app.use("/api/", require("./api/test"))
+app.use("/ws/", require("./ws/chat"))
 
-
-app.use('/api/', require("./api/test"))
-app.use('/ws/', require("./ws/chat"))
-
-
-
-
-app.get('/', function (req, res) {
-    console.log('get route');
-    res.send("hi");
-});
-
+app.get("/", function (req, res) {
+    console.log("get route")
+    res.send("hi")
+})
 
 // app.ws('/', function (ws, req) {
 //     ws.on('message', function (msg) {
