@@ -64,12 +64,12 @@
         }
     },
     "lint-staged": {
-        "*.+(js|jsx)": [
+        "src/*.+(js|jsx)": [
             "eslint --fix",
             "npm run format",
             "git add"
         ],
-        "*.+(json|css|md)": [
+        "src/*.+(json|css|md)": [
             "prettier --write",
             "git add"
         ]

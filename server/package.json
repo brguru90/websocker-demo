@@ -5,9 +5,11 @@
     "main": "server.js",
     "scripts": {
         "start": "nodemon server.js",
+        "start2": "node server.js",
         "lint": "eslint '**/*.js' --fix;exit 0",
         "format": "prettier --write '**/*.+(js|json|yml|yaml|md)'",
-        "test": "npm run lint && npm run format"
+        "test": "npm run lint && npm run format",
+        "runserver": "pm2 start server.js && pm2 restart server.js && pm2 monit"
     },
     "repository": {
         "type": "git",
@@ -17,6 +19,7 @@
     "license": "ISC",
     "homepage": "https://bitbucket.org/terralogic2019/meet#readme",
     "dependencies": {
+        "compression": "^1.7.4",
         "express": "^4.17.1",
         "express-ws": "^4.0.0",
         "restify": "^8.5.1"
