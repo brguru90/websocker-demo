@@ -1,0 +1,30 @@
+.Page2 {
+    height: 100%;
+    display: flex;
+
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        height: 100%;
+        // margin: auto;
+
+        .box {
+            text-align: center;
+            height: max-content;
+            margin: 50px;
+            min-width: 700px;
+            background-color: white;
+        }
+
+    }
+
+    .srcCanvas {
+        background-color: silver;
+        border: solid white 2px;
+        outline: solid silver 5px;
+        margin: auto;
+        margin-top: 5%;
+        margin-bottom: 5%;
+    }
+}

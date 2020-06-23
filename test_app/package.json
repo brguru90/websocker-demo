@@ -11,6 +11,7 @@
         "jquery": "^3.5.1",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-router-dom": "^5.2.0",
         "react-scripts": "3.4.1"
     },
     "scripts": {
@@ -56,8 +57,8 @@
         "eslint-scope": "^4.0.3",
         "husky": "^4.2.5",
         "lint-staged": "^10.2.7",
-        "prettier": "^2.0.5",
-        "node-sass": "^4.14.1"
+        "node-sass": "^4.14.1",
+        "prettier": "^2.0.5"
     },
     "husky": {
         "hooks": {
